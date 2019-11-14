@@ -1,3 +1,4 @@
 # IchikaButton
-====
-Vtuberの宗谷いちかのボタンサイト。
+
+宗谷いちかの[ボタンサイト](https://souyaichika.love)のリポジトリです。  
+音声ファイルは含まれていません。
