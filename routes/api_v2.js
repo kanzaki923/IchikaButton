@@ -104,7 +104,7 @@ router.get('/contents/voices', (req, res, next) => {
 });
 
 router.get('/contents/voices/:id(\\d{1,5})', (req, res, next) => {
-    let VoiceOption = ObjClone(GET_DATA_PARM.SONG);
+    let VoiceOption = ObjClone(GET_DATA_PARM.VOICE);
     VoiceOption.where.push({
         name: "voice.id",
         value: Number(req.params.id),
