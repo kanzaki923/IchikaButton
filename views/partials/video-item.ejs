@@ -1,0 +1,24 @@
+<% 
+ if (date == null) {var date = "(不明な日付)" }
+ if (duration == null) {var duration = "(不明な長さ) "}
+ if (thumbnail_url == null) {var thumbnail_url = "/images/noimage.jpg"}
+ if (title == null) {var title = "(不明なタイトル) "}
+ if (detail == null) {var detail = {song: "-", voice:"-", resiyou:"-" }}
+ if (ytid == null) {var ytid = "none"; }
+%>
+<div class="archives-item-wrap">
+    <a href="/archives/<%=ytid%>">
+    <div class="archives-item">
+        <img src="<%= thumbnail_url %>" alt="content">
+        <div class="data">
+            <span class="info"><%= date %> <%= duration %></span>
+            <span class="title"><%= title%></span>
+            <div class="numinfo">
+                <span class="song"><i class="material-icons">audiotrack</i><%= detail.song%></span>
+                <span class="voice"><i class="material-icons">movie</i><%= detail.voice%></span>
+                <span class="resiyou"><i class="material-icons">pets</i><%= detail.resiyou%></span>
+            </div>
+        </div>
+    </div>
+    </a>
+</div>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= page.title %></title>
+
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link href="https://res.cloudinary.com/finnhvman/raw/upload/matter/matter-0.2.2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- <input type="checkbox" class="menuShow" name="" id="menuShow" > -->
+
+        <nav id="left-menu">
+
+            <div id="youtube-wrap">
+                <div id="youtube-player">
+
+                </div>
+                <div id="player-controler">
+                    <span class="button play"><i class="material-icons">play_circle_filled</i></span>
+                    <span class="button pause"><i class="material-icons">pause_circle_filled</i></span>
+                    <span class="button stop"><i class="material-icons">stop</i></span>
+                    <label class="pure-material-slider">
+                        <input type="range" min="0" max="100">
+                    </label>
+                </div>
+            </div>
+            <div id="left-menus-wrap">
+                <h3>コンテンツ</h3>
+                <div id="content-nav">
+                    <ul>
+                        <li><a href="/">すべて</a>
+                            <ul>
+                                <li><a href="/TODO">歌</a></li>
+                                <li><a href="/TODO">音声</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/TODO">りしーゆー</a></li>
+                    </ul>
+                </div>
+
+                <div id="mydata">
+                    <h3>プレイリスト</h3>
+                    <div id="playlist">
+                        <ul>
+                            <li><span class="playlist-link"><a href="TODO">プレイリストのテキスト</a></span></li>
+                            <li><span class="playlist-link"><a href="TODO">あいうえお</a></span></li>
+                            <li><span class="playlist-link"><a href="TODO">歌</a></span></li>
+                            <li><span class="playlist-link"><a href="TODO">テキスト</a></span></li>
+                            <li><span class="playlist-link"><a href="TODO">プレイリストのテキスト</a></span></li>
+                        </ul>
+
+
+                        <div class="matter-button-contained  w100"><i class="material-icons">playlist_add</i>プレイリストを作成
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h1>IchikaButton</h1>
+        </nav>
+        <main id="main">
+            <div id="menu">
+
+
+
+
+                <select name="" id="">
+                    <option value="">配信別</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <select name="" id="">
+                    <option value="">配信日順</option>
+                    <option value="">配信日順</option>
+                    <option value="">ボイス数順</option>
+                    <option value="">ボイス数順</option>
+                    <option value="">歌数順</option>
+                    <option value="">歌数順</option>
+                    <option value="">しりーゆー数順</option>
+                    <option value="">しりーゆー数順</option>
+                </select>
+                <select name="" id="">
+                    <option value="">絞り込み</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+                <select name="" id="">
+                    <option value="">表示</option>
+                    <option value="">サムネイル</option>
+                    <option value="">一覧</option>
+                </select>
+            </div>
+            <div id="content">
+                <h2><%= page.title %> (<%= page.contentLength %>) - 配信別</h2>
+                <section class="archives-area">
+                    <% if (archives == null) {var archives = [];}  %>
+                    <% for(let key in archives) { %>
+                    <% let item = archives[key]; %>
+                        <%- include("partials/video-item", item) %>
+                    <% } %>
+                </section>
+
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

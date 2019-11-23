@@ -19,6 +19,7 @@ const GET_DATA_PARM = {
             "video.title",
             "video.youtubeId",
             "video.uploadAt",
+            "video.videoLength as length",
             "voice.word as name",
             "voice.id as dbId",
             "voice.created_at",
@@ -35,6 +36,7 @@ const GET_DATA_PARM = {
             "video.title",
             "video.youtubeId",
             "video.uploadAt",
+            "video.videoLength as length",
             "song.songName as name",
             "song.id as dbId",
             "song.created_at",
@@ -192,7 +194,8 @@ const getItemDetail = (VoiceOption, SongOption, callback) => {
                         ytid: row.youtubeId,
                         title: row.title,
                         date: row.uploadAt,
-                        id: row.videoId
+                        id: row.videoId,
+                        length: row.length,
                     };
                 }
 

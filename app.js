@@ -6,8 +6,8 @@ var logger = require('morgan');
 const dotenv = require('dotenv').config();
 const helmet = require('helmet'); 
 
-var indexRouter = require('./routes/index');
-var apiRouter = require('./routes/api_v2');
+const indexRouter = require('./routes/index');
+const apiRouter = require('./routes/api_v2');
 
 var app = express();
 
