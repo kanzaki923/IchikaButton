@@ -1,0 +1,19 @@
+.loading::before {
+    content: "sync";
+    display: inline-block;
+    align-content: center;
+    margin: .5rem;
+    color:rgba(28, 46, 78, 0.671);
+    font-family: "Material Icons";
+    
+    font-size: 5rem;
+
+    animation: rotate-anime 1s ease-out infinite;
+}
+
+
+@keyframes rotate-anime {
+    100% {
+        transform: rotate(-360deg)
+    }
+}

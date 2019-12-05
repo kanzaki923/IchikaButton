@@ -1,0 +1,6 @@
+.loading::before { content: "sync"; display: inline-block; -ms-flex-line-pack: center; align-content: center; margin: .5rem; color: rgba(28, 46, 78, 0.671); font-family: "Material Icons"; font-size: 5rem; -webkit-animation: rotate-anime 1s ease-out infinite; animation: rotate-anime 1s ease-out infinite; }
+
+@-webkit-keyframes rotate-anime { 100% { -webkit-transform: rotate(-360deg); transform: rotate(-360deg); } }
+
+@keyframes rotate-anime { 100% { -webkit-transform: rotate(-360deg); transform: rotate(-360deg); } }
+/*# sourceMappingURL=loading.css.map */

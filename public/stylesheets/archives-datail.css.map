@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAA,EACR,OAAO,EAAE,IAAI,GAEhB;;AAED,AAAA,cAAc,CAAA,EACV,UAAU,EAAE,KAAK,EACjB,MAAM,EAAC,KAAK,GACf;;AAED,AAAA,cAAc,CAAA,EACV,MAAM,EAAC,IAAI,GACd",
+    "sources": [
+        "archives-datail.scss"
+    ],
+    "names": [],
+    "file": "archives-datail.css"
+}

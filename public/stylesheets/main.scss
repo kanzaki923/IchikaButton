@@ -21,6 +21,7 @@ body {
     top: 10px;
 }
 
+
 #left-menu {
     padding: 1rem;
     background-color: #1c50a3;
@@ -59,7 +60,6 @@ body {
                 font-size:3rem;
             }
         }
-
         .white{
             color:white;
         }
@@ -293,6 +293,7 @@ body {
     width: 100%;
 }
 
-
 @import "./common.scss";
 @import "./slider.scss";
+@import "./loading.scss";
+@import "./archives-datail.scss";
