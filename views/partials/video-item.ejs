@@ -1,6 +1,9 @@
 <% 
  if (date == null) {var date = "(不明な日付)" }
  if (duration == null) {var duration = "(不明な長さ) "}
+ if (thumbnail_url == null && /[a-zA-Z0-9_-]/.test(ytid || "")) {
+    var thumbnail_url = `https://img.youtube.com/vi/${ytid}/mqdefault.jpg`;
+   }
  if (thumbnail_url == null) {var thumbnail_url = "/images/noimage.jpg"}
  if (title == null) {var title = "(不明なタイトル) "}
  if (detail == null) {var detail = {song: "-", voice:"-", resiyou:"-" }}
@@ -16,7 +19,7 @@
             <div class="numinfo">
                 <span class="song"><i class="material-icons">audiotrack</i><%= detail.song%></span>
                 <span class="voice"><i class="material-icons">movie</i><%= detail.voice%></span>
-                <span class="resiyou"><i class="material-icons">pets</i><%= detail.resiyou%></span>
+                <span class="resiyou"><i class="material-icons">pets</i><%= detail.resiyou || detail.lisiyou%></span>
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@ const path = require("path");
 const axios = require('axios').default;
 
 router.get("/", function (req, res, next) {
-    let items = getArchives().then((items) => {
+    let items = getArchives("voices").then((items) => {
         let result = {archives: []};
 
 
@@ -23,19 +23,26 @@ router.get("/", function (req, res, next) {
 
         res.render("content", {
             page: {
-                title: "すべてのコンテンツ",
+                title: "声ボタン",
                 contentLength: result.archives.length,
                 areaType: "archives-list"
             },
             value:{ archives: result.archives }
         });
+        
     });
 });
 
+router.get("/test", resSend);
+
+
 async function resSend(req,res,next) {
     let result = await getArchives();
+    
     res.json(result.archives);
+
 }
+
 
 async function getArchives(type = "") {
     let basePath = "";
@@ -46,6 +53,7 @@ async function getArchives(type = "") {
     }
     //const dataPath = path.join(basePath, "contents");
     const dataPath = basePath + "contents" + (type !== "" ? "/" + type: "") ;
+    console.log(dataPath);
     const res = await axios.get(dataPath);
     return res.data;
 }

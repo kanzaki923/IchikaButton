@@ -1,0 +1,65 @@
+<% let archives = ( value && value.archives ) ? value.archives[0] : "" -%>
+<% let ytid = (archives.ytid) ? archives.ytid : undefined %>
+<% let thumbnail_url = (ytid) ? `https://img.youtube.com/vi/${ytid}/mqdefault.jpg` : "/images/noimage.jpg"; -%>
+<% let title = (archives && "title" in archives) ? archives.title : "(不明)" -%>
+<% let length = (archives && "length" in archives) ? archives.length : "(不明)" -%>
+<% let uploadAt = (archives && "date" in archives) ? archives.date : "(不明)" -%>
+<% let count = {song:0, voice:0, lisiyou:0}; -%>
+<% if ("detail" in archives) { -%>
+<% let detail = archives.detail; -%>
+<% count.song = ("song" in detail) ? detail.song : 0; -%>
+<% count.voice = ("voice" in detail) ? detail.voice : 0; -%>
+<% count.lisiyou = ("lisiyou" in detail) ? detail.lisiyou : 0; -%>
+<% } -%>
+
+<div class="content-sub">
+
+    <div class="archives-info">
+        <div class="thumbnail-wrap">
+            <img src="<%= thumbnail_url %>" alt="">
+        </div>
+
+        <div class="info">
+            <%= title %> <br>
+            <%= length%><br>
+            <%= uploadAt%><br>
+            <br>
+            <span class="song"><i class="material-icons">audiotrack</i><%= count.song%></span>
+            <span class="voice"><i class="material-icons">movie</i><%= count.voice%></span>
+            <span class="resiyou"><i class="material-icons">pets</i><%= count.lisiyou%></span>
+        </div>
+    </div>
+
+    <style>
+        .ball-pulse>div {
+            background-color: rgba(88, 117, 161, 0.671);
+        }
+    </style>
+
+    <div class="archives-data">
+        <h3>ボイス</h3>
+
+        <div class="loader-inner ball-pulse">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <h3>歌</h3>
+        <div class="loader-inner ball-pulse">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+
+        <h3>りしーゆー</h3>
+        <div class="loader-inner ball-pulse">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+</div>

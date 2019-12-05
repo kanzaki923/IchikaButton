@@ -1,0 +1,10 @@
+<section class="archives-area">
+    <% let archives = []; -%>
+    <% if (value && value.archives){ -%>
+    <%     archives = value.archives; -%>
+    <% }-%>
+
+    <%for (let item of archives){ -%>
+    <%- include("../partials/video-item", item) -%>
+    <%} -%>    
+</section>

@@ -8,6 +8,10 @@ const helmet = require('helmet');
 
 const indexRouter = require('./routes/index');
 const apiRouter = require('./routes/api_v2');
+const archivesRouter = require('./routes/archives');
+const songRouter = require('./routes/song');
+const voiceRouter = require('./routes/voice');
+const resiyouRouter = require('./routes/resiyou');
 
 var app = express();
 
@@ -23,6 +27,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/archives', archivesRouter);
+app.use('/song', songRouter);
+app.use('/voice', voiceRouter);
+app.use('/resiyou', resiyouRouter);
 app.use('/api/v2', apiRouter);
 
 // catch 404 and forward to error handler
